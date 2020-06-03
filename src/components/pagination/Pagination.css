@@ -1,0 +1,23 @@
+ul {
+  text-align: right;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 3px solid #ff742b;
+  padding-bottom: 5px;
+}
+li {
+  list-style: none;
+  display: inline;
+  color: #ff742b;
+  font-weight: bold;
+}
+
+li:first-child {
+  border-right: 2px solid #ff742b;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+a:link,
+a:visited {
+  color: #ff742b;
+}
