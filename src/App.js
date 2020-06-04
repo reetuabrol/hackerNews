@@ -12,10 +12,12 @@ import { store } from './store.js';
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
   const getUpdateData = async (page, data) => {
-    const result = await axios(
-      `http://hn.algolia.com/api/v1/search_by_date?query=&page=${page}`,
-    )
-    data = result.data;
+    if (!data) {
+      const result = await axios(
+        `http://hn.algolia.com/api/v1/search_by_date?query=&page=${page}`,
+      )
+      data = result.data
+    }
     dispatch({ type: 'update State', store: checkNullPoints(data) })
     setCurrentPage(page);
   };
@@ -26,7 +28,7 @@ function App() {
     let activePage = params.length > 1 ? (Number(params[1])) : currentPage;
     activePage = activePage > 49 ? 0 : activePage
     setCurrentPage(activePage);
-    getUpdateData(activePage);
+    getUpdateData(activePage, null);
   }, []);
 
   const checkNullPoints = (data) => {

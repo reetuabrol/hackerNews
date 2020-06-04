@@ -25,6 +25,7 @@
 .container-border {
   border: 2px solid #000;
   background-color: #f6f6ef;
+  overflow-x: scroll;
 }
 .table-header {
   background-color: #ff742b;
@@ -45,4 +46,34 @@
 }
 .dataList:nth-child(even) {
   background-color: #f6f6ef;
+}
+.col-auto,
+.col-1 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  min-height: 35px;
+}
+.col-auto {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 1000px) {
+  .col-auto {
+    max-width: 500px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .col-auto {
+    max-width: 400px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .col-auto {
+    max-width: 300px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .col-auto {
+    max-width: 230px;
+  }
 }
