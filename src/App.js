@@ -14,7 +14,7 @@ function App() {
   const getUpdateData = async (page, data) => {
     if (!data) {
       const result = await axios(
-        `http://hn.algolia.com/api/v1/search_by_date?query=&page=${page}`,
+        `https://hn.algolia.com/api/v1/search_by_date?query=&page=${page}`,
       )
       data = result.data
     }
